@@ -6,14 +6,18 @@ import lombok.NoArgsConstructor;
 import shop.mtcoding.servicebank.core.exception.Exception400;
 import shop.mtcoding.servicebank.core.exception.Exception401;
 import shop.mtcoding.servicebank.core.exception.Exception403;
+import shop.mtcoding.servicebank.model.transaction.Transaction;
 import shop.mtcoding.servicebank.model.user.User;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @NoArgsConstructor
 @Getter
-@Table(name = "account_tb")
+@Table(name = "account_tb", indexes = {
+        @Index(name = "idx_account_number", columnList = "number")
+})
 @Entity
 public class Account {
     @Id

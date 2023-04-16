@@ -1,7 +1,6 @@
 package shop.mtcoding.servicebank.dto.account;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import shop.mtcoding.servicebank.model.account.Account;
 import shop.mtcoding.servicebank.model.user.User;
 
@@ -11,8 +10,7 @@ import javax.validation.constraints.NotNull;
 
 public class AccountRequest {
 
-    @Setter
-    @Getter
+    @Setter @Getter @Builder @NoArgsConstructor @AllArgsConstructor
     public static class SaveInDTO {
         @NotNull
         @Digits(integer = 4, fraction = 0)
@@ -32,8 +30,7 @@ public class AccountRequest {
         }
     }
 
-    @Setter
-    @Getter
+    @Setter @Getter @Builder @NoArgsConstructor @AllArgsConstructor
     public static class TransferInDTO {
         @NotNull
         @Digits(integer = 4, fraction = 0)
