@@ -66,7 +66,7 @@ class UserControllerTest {
     void login() throws Exception {
         //given
         UserRequest.LoginInDTO login = UserRequest.LoginInDTO.builder()
-                .username("test1")
+                .username("test")
                 .password("1234")
                 .build();
         String requestBody = new ObjectMapper().writeValueAsString(login);
